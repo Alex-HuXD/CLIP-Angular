@@ -9,7 +9,9 @@ import { ModalService } from 'src/app/services/modal.service';
   // providers: [ModalService],
 })
 export class ModalComponent implements OnInit {
-  constructor(public modal: ModalService) {}
+  constructor(public modal: ModalService) {
+    console.log(this);
+  }
 
   ngOnInit(): void {}
 }
