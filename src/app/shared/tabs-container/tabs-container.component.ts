@@ -33,8 +33,7 @@ export class TabsContainerComponent implements OnInit, AfterContentInit {
       : this.selectTab(activeTabs[0]);
   }
 
-  selectTab(target: TabComponent, e: MouseEvent | null = null) {
-    e?.preventDefault();
+  selectTab(target: TabComponent) {
     this.tabs?.forEach((tab) => {
       tab.tabTitle === target.tabTitle
         ? (tab.active = true)

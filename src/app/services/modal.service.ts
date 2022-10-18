@@ -22,7 +22,7 @@ export class ModalService {
     });
   }
 
-  unRegister(id: string) {
+  unRegister(id: string): void {
     this.modals = this.modals.filter((element) => element.id != id);
   }
 
@@ -30,7 +30,7 @@ export class ModalService {
     return !!this.modals.find((element) => element.id === id)?.visible;
   }
 
-  toggleModal(id: string) {
+  toggleModal(id: string): void {
     // this.visible = !this.visible;
     let target = this.modals.find((element) => (element.id = id));
     target ? (target.visible = !target.visible) : null;
