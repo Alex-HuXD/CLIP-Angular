@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 // import { ModalService } from '../services/modal.service';
 
 import { NgxMaskModule } from 'ngx-mask';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NgxMaskModule } from 'ngx-mask';
     TabsContainerComponent,
     TabComponent,
     InputComponent,
+    AlertComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, NgxMaskModule.forRoot()],
   exports: [
@@ -23,6 +25,7 @@ import { NgxMaskModule } from 'ngx-mask';
     TabsContainerComponent,
     TabComponent,
     InputComponent,
+    AlertComponent
   ],
 
   // providers:[ModalService]
