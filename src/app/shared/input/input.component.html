@@ -1,0 +1,33 @@
+<input
+  [formControl]="control"
+  [type]="inputType"
+  [placeholder]="inputPlaceHolder"
+  class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
+  [mask]="format"
+/>
+<ng-container *ngIf="control.touched && control.dirty">
+  <p *ngIf="control.errors?.required" class="text-red-400">Field is required</p>
+  <p
+    *ngIf="control.errors?.minlength && !control.errors?.mask"
+    class="text-red-400"
+  >
+    {{ control.errors?.minlength.actualLength }} character(s) entered,
+    {{ control.errors?.minlength.requiredLength }} characters needed
+  </p>
+  <p *ngIf="control.errors?.email" class="text-red-400">
+    You must enter a valid Email.
+  </p>
+  <p *ngIf="control.errors?.min && !control.errors?.mask" class="text-red-400">
+    You must be 18 or older.
+  </p>
+  <p *ngIf="control.errors?.pattern" class="text-red-400">
+    Password must be 8 characters or longer, and includes at least 1 uppercase
+    letter,1 lowercase letter, 1 number and 1 special character.
+  </p>
+  <p
+    *ngIf="control.errors?.minlength && control.errors?.mask"
+    class="text-red-400"
+  >
+    Please enter a valid phone number
+  </p>
+</ng-container>
